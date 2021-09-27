@@ -14,7 +14,10 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/users**").authenticated()
+                .antMatchers("/users/**").hasRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/info")
+                .authenticated()
                 .anyRequest().permitAll();
     }
 }

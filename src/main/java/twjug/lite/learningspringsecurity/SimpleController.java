@@ -15,4 +15,14 @@ public class SimpleController {
     public String users() {
         return "users";
     }
+
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @RequestMapping("/info")
+    public String info() {
+        return "info";
+    }
 }
