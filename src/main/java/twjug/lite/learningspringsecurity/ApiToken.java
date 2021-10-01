@@ -3,6 +3,7 @@ package twjug.lite.learningspringsecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 public class ApiToken implements Authentication {
@@ -15,7 +16,7 @@ public class ApiToken implements Authentication {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return Arrays.asList();
     }
 
     @Override
