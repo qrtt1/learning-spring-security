@@ -6,6 +6,13 @@ import org.springframework.security.core.GrantedAuthority;
 import java.util.Collection;
 
 public class ApiToken implements Authentication {
+
+    String token;
+
+    public ApiToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -13,7 +20,7 @@ public class ApiToken implements Authentication {
 
     @Override
     public Object getCredentials() {
-        return null;
+        return token;
     }
 
     @Override

@@ -10,7 +10,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.addFilterBefore(new FriendlyFilter(), LogoutFilter.class);
+        http.addFilterBefore(new FriendlyFilter(authenticationManager()), LogoutFilter.class);
 
         http.csrf().disable()
                 .authorizeRequests()
